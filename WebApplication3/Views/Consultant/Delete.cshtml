@@ -1,0 +1,82 @@
+﻿@model WebApplication3.Models.Cons
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Delete</h2>
+<p style=" color:darkblue"> Welcome : @ViewBag.user  &ensp; Role: @ViewBag.role &ensp;&ensp; @Html.ActionLink("Nurse Records", "Index", "Nurse") &ensp; &ensp; @Html.ActionLink("Logout", "sout") </p>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Cons</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicalHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UCD10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UCD10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatmentPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaiseBillAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaiseBillAmount)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

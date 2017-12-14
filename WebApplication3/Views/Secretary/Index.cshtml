@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebApplication3.Models.Sec>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Secretary - Patient Details</h2>
+   <p style=" color:darkblue"> Welcome : @ViewBag.user  &ensp; Role: @ViewBag.role  &ensp;&ensp; @Html.ActionLink("User Accounts", "Index","Login") &ensp; &ensp; @Html.ActionLink("Logout", "sout")</p>
+
+@using (Html.BeginForm("Index", "Secretary"))
+{
+    <p style=" color:forestgreen">
+        @Html.Label("Id")
+        <input type="text" name="pid" value="@ViewBag.pid" />
+        &ensp; <input type="submit" style="color:midnightblue" value="Search" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Appointment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NextOfKin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicalCard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EthnicOrigin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Religion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPContactDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maritalstatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SurName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appointment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppointmentTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NextOfKin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedicalCard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EthnicOrigin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Religion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GPContactDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maritalstatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

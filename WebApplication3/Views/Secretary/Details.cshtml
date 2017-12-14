@@ -1,0 +1,148 @@
+﻿@model WebApplication3.Models.Sec
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Details</h2>
+<p style=" color:darkblue"> Welcome : @ViewBag.user  &ensp; Role: @ViewBag.role  &ensp;&ensp; @Html.ActionLink("User Accounts", "Index", "Login") &ensp; &ensp; @Html.ActionLink("Logout", "sout")</p>
+
+<div>
+    <h4>Sec</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextOfKin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextOfKin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicalCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EthnicOrigin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EthnicOrigin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Religion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPContactDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPContactDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Occupation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maritalstatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maritalstatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

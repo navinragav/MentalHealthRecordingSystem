@@ -1,0 +1,83 @@
+﻿@model WebApplication3.Models.Nurse
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Details</h2>
+<p style=" color:darkblue"> Welcome : @ViewBag.user  &ensp; Role: @ViewBag.role &ensp;&ensp; @Html.ActionLink("Secretary Records", "Index", "Secretary") &ensp; &ensp; @Html.ActionLink("Logout", "sout") </p>
+<div>
+    <h4>Nurse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PastMedicalHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PastMedicalHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FamilyHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FamilyHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MentalStatusExamination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MentalStatusExamination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollateralHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollateralHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NursingCarePlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NursingCarePlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlergicSpecificMedication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlergicSpecificMedication)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

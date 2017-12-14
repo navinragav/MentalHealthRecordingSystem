@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WebApplication3.Models.Nurse>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Nurse Page - Patient Details</h2>
+<p style=" color:darkblue"> Welcome : @ViewBag.user  &ensp; Role: @ViewBag.role &ensp;&ensp; @Html.ActionLink("Secretary Records", "Index", "Secretary") &ensp; &ensp; @Html.ActionLink("Logout", "sout") </p>
+@using (Html.BeginForm("Index", "Nurse"))
+{
+    <p style=" color:forestgreen">
+        @Html.Label("Id")
+        <input type="text" name="pid" value="@ViewBag.pid" />
+        &ensp; <input type="submit" style="color:midnightblue" value="Search" />
+    </p>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PastMedicalHistory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FamilyHistory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MentalStatusExamination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollateralHistory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NursingCarePlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlergicSpecificMedication)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PastMedicalHistory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyHistory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MentalStatusExamination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollateralHistory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NursingCarePlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlergicSpecificMedication)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

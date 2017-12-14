@@ -1,0 +1,75 @@
+﻿@model WebApplication3.Models.Cons
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Details</h2>
+<p style=" color:darkblue"> Welcome : @ViewBag.user  &ensp; Role: @ViewBag.role &ensp;&ensp; @Html.ActionLink("Nurse Records", "Index", "Nurse") &ensp; &ensp; @Html.ActionLink("Logout", "sout") </p>
+<div>
+    <h4>Cons</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicalHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UCD10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UCD10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatmentPlan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentPlan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaiseBillAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaiseBillAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

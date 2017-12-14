@@ -1,0 +1,79 @@
+﻿@model IEnumerable<WebApplication3.Models.Cons>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Consultant - Page </h2>
+<p style=" color:darkblue"> Welcome : @ViewBag.user  &ensp; Role: @ViewBag.role &ensp;&ensp; @Html.ActionLink("Nurse Records", "Index", "Nurse") &ensp; &ensp; @Html.ActionLink("Logout", "sout") </p>
+
+@using (Html.BeginForm("Index", "Consultant"))
+{
+    <p style=" color:forestgreen">
+        @Html.Label("Id")
+        <input type="text" name="pid" value="@ViewBag.pid" />
+        &ensp; <input type="submit" style="color:midnightblue" value="Search" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicalHistory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UCD10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TreatmentPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RaiseBillAmount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedicalHistory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UCD10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TreatmentPlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RaiseBillAmount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
